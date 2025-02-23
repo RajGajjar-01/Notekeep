@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Card with Inertia</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+            overflow: hidden; /* Prevents the draggable element from going out */
+        }
+        .card {
+            width: 240px;
+            height: 300px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="draggable-card" class="card">
+        Drag Me
+    </div>
+
+    <script>
+        const card = document.getElementById("draggable-card");
+
+        let offsetX, offsetY, isDragging = false;
+        let lastX = 0, lastY = 0, velocityX = 0, velocityY = 0;
+
+        card.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            offsetX = e.clientX - card.getBoundingClientRect().left;
+            offsetY = e.clientY - card.getBoundingClientRect().top;
+            lastX = e.clientX;
+            lastY = e.clientY;
+            card.style.cursor = "grabbing";
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+
+            const x = e.clientX - offsetX;
+            const y = e.clientY - offsetY;
+            card.style.left = `${x}px`;
+            card.style.top = `${y}px`;
+
+            // Calculate velocity (speed of movement)
+            velocityX = e.clientX - lastX;
+            velocityY = e.clientY - lastY;
+            lastX = e.clientX;
+            lastY = e.clientY;
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
+            card.style.cursor = "grab";
+            applyInertia(); // Apply motion after release
+        });
+
+        function applyInertia() {
+            let friction = 0.95; // Controls how fast it slows down
+            let animationFrame;
+
+            function animate() {
+                if (Math.abs(velocityX) < 0.5 && Math.abs(velocityY) < 0.5) {
+                    cancelAnimationFrame(animationFrame);
+                    return;
+                }
+
+                let x = card.offsetLeft + velocityX;
+                let y = card.offsetTop + velocityY;
+                card.style.left = `${x}px`;
+                card.style.top = `${y}px`;
+
+                velocityX *= friction; // Reduce velocity
+                velocityY *= friction;
+
+                animationFrame = requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+    </script>
+
+</body>
+</html>

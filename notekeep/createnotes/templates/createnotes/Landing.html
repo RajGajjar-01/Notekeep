@@ -1,0 +1,173 @@
+{% extends "createnotes/Base.html" %}
+{% block content %}
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    </head>
+    <nav class="sticky top-0 z-50 glass-effect border-b border-zinc-700/30">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="{% url 'createnotes-landing' %}" class="flex items-center space-x-2 hover-scale">
+                    <span
+                        class="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 text-transparent bg-clip-text">Notekeep.</span>
+                </a>
+                <div class="flex space-x-4">
+                    <a href="{% url 'user-login' %}"
+                        class="px-6 py-2 text-white rounded-full border border-indigo-500/30 hover:border-indigo-500 transition-all duration-300 hover:bg-indigo-500/10">Login</a>
+                    <a href="{% url 'user-register' %}"
+                        class="px-6 py-2 rounded-full bg-[#4f46e5] text-white hover-scale animate-pulse-border transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20">Signup</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="py-[8rem]">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" class="space-y-6">
+                    <h1 class="text-5xl text-white font-bold leading-tight">
+                        Smart Notes,<br>
+                        <span
+                            class="bg-gradient-to-r from-indigo-400 to-violet-400 text-transparent bg-clip-text">Better
+                            Organization</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg">
+                        Transform your note-taking experience with AI-powered organization.
+                        Notekeep helps you capture, organize, and retrieve information effortlessly.
+                    </p>
+                    <div class="space-y-4">
+                        <a href="{% url 'user-register' %}"
+                            class="inline-flex items-center text-white px-8 py-3 rounded-full bg-[#4f46e5] hover-scale animate-pulse-border transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20">
+                            Start Taking Notes  
+                        </a>
+                        <div class="flex items-center space-x-2 text-gray-400">
+                            <div class="flex -space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                            </div>
+                            <span>4.9/5 from 10k+ users</span>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="hidden md:block hover-scale">
+                    <img src="https://st2.depositphotos.com/1017986/10982/i/450/depositphotos_109827304-stock-photo-close-up-of-books-on.jpg" alt="Note interface preview"
+                        class="w-full drop-shadow-2xl rounded-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-[8rem] glass-effect">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" class="space-y-6">
+                    <span class="text-indigo-400 font-semibold">REVOLUTIONIZE NOTE-TAKING</span>
+                    <h2
+                        class="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 text-transparent bg-clip-text">
+                        What makes Notekeep different?
+                    </h2>
+                    <p class="text-gray-400">
+                        Notekeep transforms traditional note-taking into an intelligent, organized system.
+                        Our AI-powered platform helps you create, organize, and retrieve notes more efficiently
+                        than ever before.
+                    </p>
+                </div>
+                <div data-aos="fade-left" class="hidden md:block hover-scale">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/013/717/509/small/school-education-and-science-doodle-background-free-vector.jpg" alt="Note-taking features"
+                        class="w-full rounded-lg drop-shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-[8rem]">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" class="hidden md:block hover-scale">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9BandPrDpssvTHOwXtrRWh_9kr9TqepAMTw&s" alt="Smart organization"
+                        class="w-full rounded-lg drop-shadow-2xl">
+                </div>
+                <div data-aos="fade-left" class="space-y-6">
+                    <span class="text-indigo-400 font-semibold">TOTAL CUSTOMIZATION</span>
+                    <h2
+                        class="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 text-transparent bg-clip-text">
+                        Enhance productivity with smart organization
+                    </h2>
+                    <p class="text-gray-400">
+                        Our intelligent system learns from your note-taking patterns to suggest better organization
+                        methods.
+                        With customizable tags, folders, and AI-powered categorization, finding the right information
+                        has never been easier.
+                    </p>
+                    <div>
+                        <a href="{% url 'user-register' %}"
+                            class="inline-flex text-white items-center px-8 py-3 rounded-full bg-[#4f46e5]  hover-scale animate-pulse-border transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20">
+                            Start organizing notes
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-[8rem] glass-effect">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12 bg-gradient-to-r from-indigo-400 to-violet-400 text-transparent bg-clip-text"
+                data-aos="fade-up">
+                Features that make note-taking better
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-xl bg-zinc-800/50 shadow-lg hover-scale border border-zinc-700/30 hover:border-indigo-500/30 transition-all duration-300"
+                    data-aos="fade-up">
+                    <div class="text-indigo-400 text-xl mb-4">01</div>
+                    <h3 class="text-xl text-white font-bold mb-4">Smart Organization</h3>
+                    <p class="text-gray-400">AI-powered categorization and tagging for effortless organization</p>
+                </div>
+                <div class="p-6 rounded-xl bg-zinc-800/50 shadow-lg hover-scale border border-zinc-700/30 hover:border-indigo-500/30 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-indigo-400 text-xl mb-4">02</div>
+                    <h3 class="text-xl text-white font-bold mb-4">Quick Search</h3>
+                    <p class="text-gray-400">Find any note instantly with powerful search capabilities</p>
+                </div>
+                <div class="p-6 rounded-xl bg-zinc-800/50 shadow-lg hover-scale border border-zinc-700/30 hover:border-indigo-500/30 transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-indigo-400 text-xl mb-4">03</div>
+                    <h3 class="text-xl text-white font-bold mb-4">Sync Everywhere</h3>
+                    <p class="text-gray-400">Access your notes from any device, anytime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-[8rem]">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-2xl mx-auto p-8 rounded-xl glass-effect border border-zinc-700/30" data-aos="zoom-in">
+                <h2
+                    class="text-3xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-violet-400 text-transparent bg-clip-text">
+                    Start Taking Better Notes Today
+                </h2>
+                <p class="text-gray-400 mb-8">Join thousands of users who've transformed their note-taking experience
+                </p>
+                <a href="{% url 'user-register' %}"
+                    class="inline-block px-8 py-3 rounded-full bg-[#4f46e5] text-white hover-scale animate-pulse-border transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20">
+                    Create Free Account
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            offset: 150
+        });
+    </script>
+</div>
+{% endblock content %}

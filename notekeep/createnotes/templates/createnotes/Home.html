@@ -1,0 +1,38 @@
+{% extends "createnotes/Base.html" %}
+
+{% block content %}
+<div>
+    <!-- Background Section -->
+    <div class="relative bg-zinc-800 min-h-screen">
+        <h1
+            class="text-[8vw] absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 leading-none font-semibold font-['Questrial'] text-zinc-700">
+            Notekeep.
+        </h1>
+    </div>
+
+    <!-- Notes Section -->
+    <div id="main-container"
+        class="fixed top-0 left-0 z-4 h-full w-full flex flex-col sm:flex-row gap-4 sm:gap-10 p-4 sm:p-5 overflow-y-auto">
+    </div>
+</div>
+
+<div id="addNoteModal" class="hidden fixed inset-0 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-[42rem]">
+        <h3 class="text-lg font-semibold mb-4">Add Note</h3>
+        <form id="addNoteForm" method="post">
+            {% csrf_token %}
+            {{ createNote.title }}
+            {{ createNote.description }}                                           
+            <div class="flex justify-end">
+                <button type="button" id="cancelNoteModalBtn" class="px-4 py-2 text-gray-500">
+                    Cancel
+                </button>
+                <button type="submit"
+                    class="px-4 py-2 bg-[#4f46e5] text-white rounded-lg hover:bg-[#4f46e5]/80 transition-colors duration-200">
+                    Add
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
